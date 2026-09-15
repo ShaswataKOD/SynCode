@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: commitizen-check
+        name: commitizen check
+        entry: uv run python -m commitizen check --commit-msg-file
+        language: system
+        stages: [commit-msg]
