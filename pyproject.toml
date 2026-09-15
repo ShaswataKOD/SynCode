@@ -8,6 +8,7 @@ dependencies = []
 dev = [
     "black>=26.5.1",
     "commitizen>=4.18.1",
+    "detect-secrets>=1.5.0",
     "pre-commit>=4.6.2",
     "ruff>=0.16.7",
 ]

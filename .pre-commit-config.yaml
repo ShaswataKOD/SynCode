@@ -6,3 +6,9 @@ repos:
         entry: uv run python -m commitizen check --commit-msg-file
         language: system
         stages: [commit-msg]
+
+      - id: detect-secrets
+        name: detect secrets
+        entry: uv run detect-secrets-hook --baseline .secrets.baseline
+        language: system
+        stages: [pre-commit]
