@@ -1,6 +1,6 @@
 [project]
 name = "syncode"
-version = "0.1.0"
+version = "0.2.0"
 requires-python = ">=3.11"
 dependencies = []
 
@@ -11,12 +11,17 @@ dev = [
     "pre-commit>=4.6.2",
     "ruff>=0.16.7",
 ]
+
 [tool.commitizen]
 name = "cz_customize"
-version = "0.1.0"
+version = "0.2.0"
 tag_format = "v$version"
-
+version_files = ["pyproject.toml:version"]
+bump_message = "chore CS-0: bump version $current_version → $new_version"
 
 [tool.commitizen.customize]
 schema_pattern = "(feat|fix|wip|chore) CS-\\d+: .{1,72}"
 message_template = "{type} CS-{ticket}: {message}"
+bump_pattern = "^(feat|fix)"
+bump_map = { "feat" = "MINOR", "fix" = "PATCH" }
+change_type_map = { "feat" = "Features", "fix" = "Bug Fixes", "wip" = "Work in Progress" }
